@@ -1,0 +1,32 @@
+<%- include ("./index.ejs") %>
+
+
+
+<form action="/today" method="post" >
+
+  <h1><%= date %></h1>
+
+  <%  if (locals.todaytasks) { %>
+    
+    <%  todaytasks.forEach(element => { %>
+      
+    <ul>
+    <input type="checkbox" name="task-index" >
+    <label for="task-index"> <%= element %>  </label><br>
+    </ul>
+    <%  });%> 
+
+ <%  } else { %> 
+
+  <h1>No List To Show</h1>
+
+ <%   } %>
+
+  
+
+  
+  <input type="text"  name="task-name">
+  <input type="submit" value="+">
+
+    
+</form>

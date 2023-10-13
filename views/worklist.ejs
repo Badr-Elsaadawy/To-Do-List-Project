@@ -1,0 +1,37 @@
+<%- include ("index.ejs") %>
+
+
+
+
+<form action="/work" method="post" >
+
+    <h1>Work List</h1>
+  
+    <%  if (locals.worktasks) { %>
+      
+      <%  worktasks.forEach(element => { %>
+        
+      <ul>
+      <input type="checkbox" name="task-index" >
+      <label for="task-index"> <%= element %>  </label><br>
+      </ul>
+      <%  });%> 
+  
+   <%  } else { %> 
+  
+    <h1>No List To Show</h1>
+  
+   <%   } %>
+    
+    <input type="text"  name="task-name">
+    <input type="submit" value="+">
+  
+      
+  </form>
+
+
+
+
+
+
+
